@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "264625352825",
+    "project_id": "riverpod-firestore-strea-455c5",
+    "storage_bucket": "riverpod-firestore-strea-455c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264625352825:android:b2c5e850d4b28d7e4c24a8",
+        "android_client_info": {
+          "package_name": "com.example.riverpod_firestore_stream"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264625352825-23g0nhqmpenq6lb3p1v8e67cti9op6ui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYmevrC8Yg8hsWTWkSQYrGOA7AUmWDlM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264625352825-23g0nhqmpenq6lb3p1v8e67cti9op6ui.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "264625352825-fibdm638jgrp6m7adv5l7rhi22jqgkti.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.riverpodFirestoreStream"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264625352825:android:e7ad55b46dc3a5894c24a8",
+        "android_client_info": {
+          "package_name": "site.mtcoding.riverpod_firestore_stream"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264625352825-23g0nhqmpenq6lb3p1v8e67cti9op6ui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYmevrC8Yg8hsWTWkSQYrGOA7AUmWDlM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264625352825-23g0nhqmpenq6lb3p1v8e67cti9op6ui.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "264625352825-fibdm638jgrp6m7adv5l7rhi22jqgkti.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.riverpodFirestoreStream"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

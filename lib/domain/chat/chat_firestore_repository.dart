@@ -1,0 +1,3 @@
+//provider
+
+class ChatFirestoreRepository {}
