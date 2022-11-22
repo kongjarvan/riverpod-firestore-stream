@@ -1,24 +1,59 @@
-import 'package:flutter/material.dart';
+import 'dart:math';
 
-class ChatRoomPage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_firestore_stream/controller/chat_controller.dart';
+import 'package:riverpod_firestore_stream/domain/chat/chat_firestore_repository.dart';
+import 'package:riverpod_firestore_stream/dto/chat/chat_req_dto.dart';
+
+class ChatRoomPage extends ConsumerWidget {
   const ChatRoomPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final chatController = ref.read(chatControllerProvider);
+
     return Scaffold(
       appBar: _buildAppBar(),
-      body: _buildListView(),
+      body: _buildListView(ref),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Random random = Random();
+          ChatInsertReqDto dto = ChatInsertReqDto(
+            from: "ssar${random.nextDouble()}",
+            to: "cos",
+            msg: "hello - ${random.nextInt(100)}",
+          );
+          chatController.insert(dto);
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 
-  ListView _buildListView() {
-    return ListView.separated(
-      itemCount: 2,
-      itemBuilder: (context, index) => ListTile(
-        title: Text('msg: 안녕'),
-        subtitle: Text('from: ssar'),
+  Widget _buildListView(WidgetRef ref) {
+    final chatStream = ref.watch(chatStreamProvider);
+    return chatStream.when(
+      data: (chats) {
+        if (chats.isNotEmpty) {
+          return ListView.separated(
+            itemCount: chats.length,
+            itemBuilder: (context, index) => ListTile(
+              title: Text("msg : ${chats[index].msg}"),
+              subtitle: Text("from : ${chats[index].from}"),
+            ),
+            separatorBuilder: (context, index) => Divider(),
+          );
+        } else {
+          return Center(
+            child: Text("채팅 내역 없음"),
+          );
+        }
+      },
+      error: (error, stackTrace) => Center(
+        child: CircularProgressIndicator(),
       ),
-      separatorBuilder: (context, index) => Divider(),
+      loading: () => CircularProgressIndicator(),
     );
   }
 
